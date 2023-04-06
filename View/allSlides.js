@@ -92,8 +92,8 @@ export function makeSlides(){
 
     // INSTRUCT 1
     var textInstruct1 = [    
-        [ ["Here is the tool that I needed to learn about neural networks."], [layout.CX-400, layout.CY+100]],
-        [ ["I hope it helps you!"], [layout.CX, layout.CY+150]],
+        [ ["这是我学习神经网络所需要的工具."], [layout.CX-400, layout.CY+100]],
+        [ ["希望能帮到你！"], [layout.CX, layout.CY+150]],
 
     ];    
     SlideInstruct1.drawText(textInstruct1);
@@ -124,10 +124,10 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     SlideInstruct2.SlideInstructLayers=true;
     var textInstruct2 = [    
-        [ ["Here is the tool that I needed to learn about neural networks."], [layout.CX-400, layout.CY+100]],
-        [ ["I hope it helps you!"], [layout.CX, layout.CY+150]],
-        [ ["use these buttons to jump ahead to different sections"], [layout.CX-300, 150]],
-        [ ["just want to play with a pre-built neural network? click                       "], [layout.CX-200, 200]],
+        [ ["这是我学习神经网络所需要的工具."], [layout.CX-400, layout.CY+100]],
+        [ ["希望能帮到你！"], [layout.CX, layout.CY+150]],
+        [ ["点击按钮可以跳到不同的章节"], [layout.CX-300, 150]],
+        [ ["只想玩一下神经网络？ 点这里                       "], [layout.CX-200, 200]],
         sandbox,
     ];    
     SlideInstruct2.drawText(textInstruct2);
@@ -147,7 +147,7 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textIntro1= [
         sorter,
-        [ ["As humans, we take our ability to recognize objects for granted. ",textstyles.large_bold], [layout.CX-375, layout.CY-170] ],
+        [ ["作为人类，分辨物体对我们来说是一件十分轻松的任务。 ",textstyles.large_bold], [layout.CX-375, layout.CY-170] ],
         [ ["Neural networks are a type of machine learning based on the human brain. "],[layout.CX-350, layout.CY-100] ],
         [ ["Some neural networks are trained to identify and classify data. "],[layout.CX-300, layout.CY-50] ],
     ];
