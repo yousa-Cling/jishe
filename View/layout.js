@@ -1,4 +1,4 @@
-
+// 一些页面设计常量
 export const layout = {
 
     CX: window.innerWidth/2,

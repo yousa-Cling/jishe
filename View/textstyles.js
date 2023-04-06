@@ -1,3 +1,4 @@
+// 文本格式预设
 export const textstyles = {
   default: new PIXI.TextStyle({
     fontFamily: 'Helvetica',

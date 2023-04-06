@@ -1,3 +1,4 @@
+// 页面类，页面控件的方法
 import {Button, tintDown, tintOver} from "./Button.js"
 import {layout} from "./layout.js"
 import {actFns} from "../../Model/actfns.js"
@@ -34,7 +35,7 @@ PIXI.Graphics.prototype.updateLineStyle = function(lineWidth, color, alpha){
 export class Slide{
     constructor(){
 
-        var slide=this;
+//        var slide=this;
        // this.maxLayers=5;
         this.buttonContainer  = new PIXI.Container();        
         this.textbuttonContainer  = new PIXI.Container(); 

@@ -1,3 +1,5 @@
+// 每个页面的共有元素
+// 通过loader与其它文件交互，将图片转为可用格式
 //import { defaultInput } from "../Model/net.js";
 import {Button} from "./Button.js"
 import {layout} from "./layout.js"
@@ -81,7 +83,7 @@ export class View{
           autoResize: true,
           width: window.innerWidth,
           height: window.innerHeight,
-          backgroundColor: 0xf5f6ff
+          backgroundColor: 0xbfbfbf
         });
 
         this.app=app;
@@ -95,10 +97,10 @@ export class View{
         this.app.stage.addChild(opener);
 
         var loading = new PIXI.Sprite(PIXI.Texture.from('images/loading.png'));
-        loading.name="loading";
-        loading.anchor.set(0.5);
-        loading.x=window.innerWidth/2;
-        loading.y=window.innerHeight/2+250 -30;
+            loading.name="loading";
+            loading.anchor.set(0.5);
+            loading.x=window.innerWidth/2;
+            loading.y=window.innerHeight/2+250 -30;
         this.app.stage.addChild(loading );
 
         //lol
@@ -460,11 +462,11 @@ export class View{
 
 
         this.app.stage.addChild(button_nextslide, button_prevslide, button_start, button_backfromcalc,button_calc2sand,
-             text_calc2sand, homebutton,gotoneuron,gotoforward,gotobackprop,gotocalc,gotosand);
+            text_calc2sand, homebutton,gotoneuron,gotoforward,gotobackprop,gotocalc,gotosand);
 
         this.app.stage.getChildByName("homebutton").on('click', function(e){ 
-                vst.currentSlide=0;
-                vst.drawSlide();
+            vst.currentSlide=0;
+            vst.drawSlide();
                     
         });
 
@@ -472,7 +474,7 @@ export class View{
             vst.currentSlide=0;
             vst.drawSlide();
                 
-    });
+        });
 
         this.app.stage.getChildByName("button_start").on('click', function(e){ 
             if(vst.currentSlide+1<vst.slideList.length){
@@ -481,7 +483,7 @@ export class View{
             }
         });
 
-       this.app.stage.getChildByName("button_start").on('tap', function(e){ 
+        this.app.stage.getChildByName("button_start").on('tap', function(e){ 
             if(vst.currentSlide+1<vst.slideList.length){
                 vst.currentSlide=vst.currentSlide+1;
                 vst.drawSlide();

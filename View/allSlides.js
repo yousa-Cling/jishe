@@ -1,3 +1,4 @@
+// 组织了每个页面中的非共有元素
 import { Slide } from "./Slide.js"
 import { layout } from "./layout.js";
 import { Net } from "../Model/net.js"
@@ -92,7 +93,7 @@ export function makeSlides(){
 
     // INSTRUCT 1
     var textInstruct1 = [    
-        [ ["这是我学习神经网络所需要的工具."], [layout.CX-400, layout.CY+100]],
+        [ ["这是我学习神经网络时用到的工具."], [layout.CX-400, layout.CY+100]],
         [ ["希望能帮到你！"], [layout.CX, layout.CY+150]],
 
     ];    
@@ -108,13 +109,12 @@ export function makeSlides(){
     SlideInstruct2.arrowContainer.addChild(arrow1);
 
     var arrow2 =new PIXI.Sprite(loader.resources["images/arrows/arrow1.png"].texture);
-    arrow2.isSprite=true;
-    arrow2.scale.set(0.5);
-    arrow2.x = window.innerWidth-750;
-    arrow2.y = 70;
-    arrow2.height = 110;
-
-SlideInstruct2.arrowContainer.addChild(arrow2);
+        arrow2.isSprite=true;
+        arrow2.scale.set(0.5);
+        arrow2.x = window.innerWidth-750;
+        arrow2.y = 70;
+        arrow2.height = 110;
+    SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var sandbox =new PIXI.Sprite(loader.resources["images/intro/sandbox.png"].texture);
         sandbox.isSprite=true;
@@ -124,7 +124,7 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     SlideInstruct2.SlideInstructLayers=true;
     var textInstruct2 = [    
-        [ ["这是我学习神经网络所需要的工具."], [layout.CX-400, layout.CY+100]],
+        [ ["这是我学习神经网络时用到的工具."], [layout.CX-400, layout.CY+100]],
         [ ["希望能帮到你！"], [layout.CX, layout.CY+150]],
         [ ["点击按钮可以跳到不同的章节"], [layout.CX-300, 150]],
         [ ["只想玩一下神经网络？ 点这里                       "], [layout.CX-200, 200]],
@@ -147,9 +147,9 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textIntro1= [
         sorter,
-        [ ["作为人类，分辨物体对我们来说是一件十分轻松的任务。 ",textstyles.large_bold], [layout.CX-375, layout.CY-170] ],
-        [ ["Neural networks are a type of machine learning based on the human brain. "],[layout.CX-350, layout.CY-100] ],
-        [ ["Some neural networks are trained to identify and classify data. "],[layout.CX-300, layout.CY-50] ],
+        [ ["作为人类，分辨物体对我们来说是一件十分轻松的任务 ",textstyles.large_bold], [layout.CX-375, layout.CY-170] ],
+        [ ["神经网络是一种以人脑为基础的机器学习技术 "],[layout.CX-350, layout.CY-100] ],
+        [ ["人们会训练一些神经网络来帮助他们完成识别和分类数据的任务 "],[layout.CX-300, layout.CY-50] ],
     ];
     SlideIntro1.drawText(textIntro1);
 
@@ -162,9 +162,9 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
         examples_labels.y=layout.CY;
 
     var textIntro2 = [
-        [["In order to train our network, "+'\n'+"we need to give it some examples "+'\n'+"of data we want to classify."], [layout.CX-450, layout.CY-150]],
-        [["Using our big human brains,"+'\n'+"we label these examples"+'\n'+"with the right answers. " ], [layout.CX-425, layout.CY-30]],
-        [["The neural network uses these examples" +'\n'+ "to learn how to separate the data."],[layout.CX-480,layout.CY+100]],
+        [["为了训练我们自己的神经网络， "+'\n'+"我们需要给出一些样例 "+'\n'+"首先看看我们要分类的数据"], [layout.CX-450, layout.CY-150]],
+        [["我们需要先手工标注："+'\n'+"我们用正确的答案"+'\n'+"来标注这些数据 " ], [layout.CX-425, layout.CY-30]],
+        [["神经网络用这些样例" +'\n'+ "来学习如何将数据进行分类"],[layout.CX-480,layout.CY+100]],
         examples_labels
     ];
 
@@ -179,8 +179,8 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
         captcha.y=layout.CY+40;
 
     var textIntro3 = [
-        [ captcha,["If you've ever had to solve a puzzle like this to get into a website..."], [layout.CX-400,layout.CY-190]],
-        [ ["...you were probably helping label data" +'\n'+" to train a neural network."], [layout.CX, layout.CY+130]]
+        [ captcha,["如果你在上网冲浪的时候，遇到过这样一个东西..."], [layout.CX-400,layout.CY-190]],
+        [ ["...那么你很可能帮神经网络训练" +'\n'+"提供了标注好的数据."], [layout.CX, layout.CY+130]]
     ];
 
     SlideIntro3.drawText(textIntro3);
@@ -193,13 +193,13 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
         percep_blank.y=layout.CY-150;
 
     var textIntro1b= [percep_blank,
-        [ ["Once our net is finished training, it will be able to sort"], [" unlabeled ", textstyles.ital ], ["data."],[layout.CX-450,layout.CY-185]],
-        [["Here's a neural network that has learned to classify"+'\n'],
-        ["     strawberries ", textstyles.default_red],
-        ["and                               "],
-        [" blueberries", textstyles.default_blue],
+        [ ["一旦我们的网络完成训练，它就能够用于分辨"], [" 未标注 ", textstyles.ital ], ["的数据."],[layout.CX-450,layout.CY-185]],
+        [["这里有一个神经网络，它可以分辨出"+'\n'],
+        ["     草莓 ", textstyles.default_red],
+        ["和                               "],
+        [" 蓝莓", textstyles.default_blue],
         [layout.CX-450,layout.CY-130]],
-        [["Click on an image to feed it into the net.",textstyles.instruct], [layout.CX-450, layout.CY-20] ],
+        [["点击图片把它喂给神经网络.",textstyles.instruct], [layout.CX-450, layout.CY-20] ],
     ];
 
 
@@ -290,10 +290,10 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
         example_blue.y= layout.CY;
 
     var textIntro3a = [example_blue,
-        [ ["First, how do we take an image" +'\n'+"and put it in terms a computer will understand?"], [layout.CX-370,layout.CY-175]],
-        [ ["(That is, numbers)", textstyles.medium], [layout.CX-200,layout.CY-100]],
-        [ ["Some neural networks"+'\n'+ "can identify images using their pixels. "], [layout.CX-300,layout.CY] ],
-        [ ["For our neural network, we are going to assign " +'\n'+"some attributes that we think are important."], [layout.CX-380,layout.CY+125]],
+        [ ["首先，我们要考虑" +'\n'+"怎样才能把一张图片变成电脑可以识别的样子？"], [layout.CX-370,layout.CY-175]],
+        [ ["(答案是，数字)", textstyles.medium], [layout.CX-200,layout.CY-100]],
+        [ ["一些神经网络"+'\n'+ "可以通过图片的像素来识别它们 "], [layout.CX-300,layout.CY] ],
+        [ ["对于我们的神经网络， " +'\n'+"我们将分配一些我们认为重要的属性."], [layout.CX-380,layout.CY+125]],
     ];
 
     SlideIntro5.drawText(textIntro3a);
@@ -307,13 +307,13 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     SlideIntro6.labelsContainer.getChildByName("axis").y=layout.CY-130;
 
       var textIntro4a = [
-        [["Here's a graph of all our data. ",textstyles.large_bold], [layout.CX-470,layout.CY-190]],
-        [["Because we have 2 inputs,"+'\n'+ "we can plot our data points on a 2-D graph."], [layout.CX-70,layout.CY-130]],
-        [["The neural network is going to try to find the line" +'\n'+"that best separates the two classes."], [layout.CX-70,layout.CY-55]],
-        [["If we have more than 2 inputs, the neural network " +'\n'+"will find the"], [" hyperplane                 ",textstyles.ital], 
-            [" that separates them."], [layout.CX-70,layout.CY+20]],
-        [["(though we can't visualize it with a graph.)", textstyles.medium], [layout.CX+40,layout.CY+80]],
-        [["Now, we can start building our neural network.", textstyles.large_bold], [layout.CX-70,layout.CY+160]],
+        [["这里是一张有我们所有数据的图. ",textstyles.large_bold], [layout.CX-470,layout.CY-190]],
+        [["因为我们有两个输入，"+'\n'+ "所以我们可以把数据点画在二维图上"], [layout.CX-70,layout.CY-130]],
+        [["神经网络将会试着找到一条线" +'\n'+"这条线可以完美地把数据分成两部分."], [layout.CX-70,layout.CY-55]],
+        [["如果我们有多于两个输入， " +'\n'+"我们的神经网络将会找到"], [" 超平面                 ",textstyles.ital], 
+            [" 来分割它们."], [layout.CX-70,layout.CY+20]],
+        [["(虽然我们不能用图像来展示它.)", textstyles.medium], [layout.CX+40,layout.CY+80]],
+        [["现在，我们可以开始建立我们的神经网络了.", textstyles.large_bold], [layout.CX-70,layout.CY+160]],
 
     ];
     SlideIntro6.drawText(textIntro4a);
@@ -326,8 +326,8 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
         percep_labels.y=layout.CY;
 
     var textNeuronA = [
-        [["A neural network is made up of          "+'\n'], ["neurons",textstyles.large_bold],[" connected by                   "],
-         ["weights. ",textstyles.large_bold],[ layout.CX+150, layout.CY-50]],
+        [["一个神经网络由          "+'\n'], ["神经元",textstyles.large_bold],[" 构成，神经元之间由            " + "\n"],
+         ["权重 ",textstyles.large_bold],["连接"], [ layout.CX+150, layout.CY-50]],
         percep_labels,
 
     ];
@@ -344,13 +344,13 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textNeuronA2 = [
         percep_layers,
-        [["Neurons are organized in"], [" layers. ",textstyles.large_bold],[ layout.CX+100, layout.CY-150]],
-        [["Calculations happen"+'\n'+ "in the hidden and output layers. "],[layout.CX+100,layout.CY-75]],
+        [["神经元被以"], [" 层. ",textstyles.large_bold], ["的方式组织起来"], [ layout.CX+100, layout.CY-150]],
+        [["计算发生在"+'\n'+ "隐藏层和输出层. "],[layout.CX+100,layout.CY-75]],
 
-        [["The output layer also gives us"+'\n'+"the net's final classification. "],[layout.CX+100,layout.CY+25]],
+        [["输出层也给出我们"+'\n'+"神经网络最终的分类结果. "],[layout.CX+100,layout.CY+25]],
 
 
-        [["We can have several hidden layers,"+'\n'+"but only one output layer. "],[layout.CX+100,layout.CY+125]]
+        [["一个神经网络可以有很多隐藏层,"+'\n'+"但只能有一个输出层. "],[layout.CX+100,layout.CY+125]]
     ];
 
     SlideIntro8.drawText(textNeuronA2);
@@ -370,11 +370,11 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textNeuron1b = [
         neuron_example3,
-        [ ["Here's a neuron. ", textstyles.large_bold], [ layout.CX-470, layout.CY-180]],
-            [ ["A neuron takes in some inputs... " ], [ layout.CX-470, layout.CY-120] ],
-            [ ["(each input is a single number)", textstyles.medium ], [ layout.CX-450, layout.CY-70] ],
-            [ ["...some math happens... " ], [ neuron_example3.x-125, neuron_example3.y+150]],
-            [ neuron_example3,["...and spits out a single output. " ], [ neuron_example3.x+110, layout.CY+60]],
+        [ ["这里有一个神经元. ", textstyles.large_bold], [ layout.CX-470, layout.CY-180]],
+            [ ["一个神经元接收一些输入... " ], [ layout.CX-470, layout.CY-120] ],
+            [ ["(每个输入都是单个数字)", textstyles.medium ], [ layout.CX-450, layout.CY-70] ],
+            [ ["...进行一些数学运算... " ], [ neuron_example3.x-125, neuron_example3.y+150]],
+            [ neuron_example3,["...然后得到一个输出. " ], [ neuron_example3.x+110, layout.CY+60]],
     ];
     SlideNeuron1.drawText(textNeuron1b);
 
@@ -419,8 +419,8 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     var textNeuron2 = [
         neuron_large_over,
         inputexample,
-        [["We give our net one piece of data at a time."], [layout.CX-480,layout.CY-200]],
-        [["The two values that we determined earlier"+'\n'+" become our "], ["inputs. ", textstyles.large_bold], [layout.CX-480,layout.CY+160]],
+        [["我们每次给我们的网络提供一条数据."], [layout.CX-480,layout.CY-200]],
+        [["我们之前确定的两个值"+'\n'+" 作为我们的 "], ["输入. ", textstyles.large_bold], [layout.CX-480,layout.CY+160]],
     ];
 
     SlideNeuron2.drawText(textNeuron2);
@@ -460,13 +460,13 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     });
 
     var textNeuron2b = [
-        [neuron_large_actfncover,["Each input is multiplied by a"],[" weight. ",textstyles.large_bold], [layout.CX-470,layout.CY-200]],
-        [["Next, we take the sum of all those values. "], [layout.CX-470,layout.CY-145]],
-       [["Finally, we add in another number"+'\n'+" - called the"], [" bias.  ", textstyles.large_bold], [layout.CX-450,layout.CY-95]],
-        [["Hover your mouse over the weights." +'\n'+"Click to increase and decrease their values.",textstyles.instruct], [layout.CX-470,layout.CY-20]],
-        [["orange ",orange], ["weights are negative"+'\n',med],
-            ["blue ",blue], ["weights are positive",med], [layout.CX-350,layout.CY+35]],
-        [["When we first create our net,"+'\n'+ "our weights are random numbers" +'\n' +"and our biases are set to 0."],[layout.CX-440,layout.CY+130]],
+        [neuron_large_actfncover,["每个输入都乘上一个"],[" 权重. ",textstyles.large_bold], [layout.CX-470,layout.CY-200]],
+        [["接下来，我们取所有这些值的和 "], [layout.CX-470,layout.CY-145]],
+       [["最后，我们加入一个数字"+'\n'+" - 它的名字是"], [" 偏置.  ", textstyles.large_bold], [layout.CX-450,layout.CY-95]],
+        [["把你的鼠标悬停在权重上." +'\n'+"点击鼠标来增减它们的权重.",textstyles.instruct], [layout.CX-470,layout.CY-20]],
+        [["橙色 ",orange], ["权重是负的"+'\n',med],
+            ["蓝色 ",blue], ["权重是正的",med], [layout.CX-350,layout.CY+35]],
+        [["当我们第一次创建神经网络的时候,"+'\n'+ "网络中的权重都是随机数" +'\n' +"偏置都被设为0."],[layout.CX-440,layout.CY+130]],
 
 
     
@@ -491,9 +491,9 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     sigmoid.y=layout.CY-90;
 
     var textNeuron2c = [sigmoid,
-        [ ["Next, we plug that last value into an "+'\n'], ["     activation function", textstyles.large_bold], [layout.CX-480,layout.CY-200]],   
-        [ ["Right now, we're using the sigmoid function: "], [layout.CX-480,layout.CY-120]],
-        [ ["This squishes our output between 0 and 1. "], [layout.CX-480,layout.CY+170]],
+        [ ["接下来，我们将最后一个值插入到 "+'\n'], ["     激活函数", textstyles.large_bold], [layout.CX-480,layout.CY-200]],   
+        [ ["现在，我们使用的是sigmoid函数: "], [layout.CX-480,layout.CY-120]],
+        [ ["这个函数将我们的输出压缩在0到1之间. "], [layout.CX-480,layout.CY+170]],
     ];
     SlideNeuron4.drawText(textNeuron2c);
     SlideNeuron4.drawTextButtons();  
@@ -514,7 +514,7 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     relu.y=layout.CY-90;
 
     var textNeuron2d = [
-       [ ["Another activation function is called a"+'\n'],[layout.CX-470,layout.CY-200]],
+       [ ["另一个激活函数名叫"+'\n'],[layout.CX-470,layout.CY-200]],
         [ [" Re",textstyles.large_bold],
           ["ctified"],
           [" L",textstyles.large_bold],
@@ -522,7 +522,7 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
           [" U",textstyles.large_bold],
           ["nit                     "],
           [layout.CX-470,layout.CY-170]],
-          [ ["Or"], [" ReLU ", textstyles.large_bold], ["for short."], [layout.CX-400,layout.CY-135]],
+          [ ["或者简称"], [" ReLU ", textstyles.large_bold], [layout.CX-400,layout.CY-135]],
 
         relu,
     
@@ -541,10 +541,10 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     SlideNeuron6.drawActFnButtons();
 
     var textNeuron2d2 = [
-        [ ["The activation function is important because"+'\n'+ "it makes the network"],[" non-linear.  ",textstyles.ital], [layout.CX-470,layout.CY-170]],
-        [ ["This allows us to classify data" +'\n'+"that we can't separate with a straight line."], [layout.CX-470,layout.CY-90]],   
+        [ ["激活函数很重要，因为"+'\n'+ "它使得神经网络"],[" non-linear.  ",textstyles.ital], [layout.CX-470,layout.CY-170]],
+        [ ["这允许我们对那些" +'\n'+"无法用一条线分割的数据进行分类."], [layout.CX-470,layout.CY-90]],   
 
-        [ ["Use these buttons to change"+'\n'+ "the activation function.",textstyles.instruct], [layout.CX-420,layout.CY-10]],   
+        [ ["使用这些按钮来更换"+'\n'+ "激活函数.",textstyles.instruct], [layout.CX-420,layout.CY-10]],   
     ];
     SlideNeuron6.drawText(textNeuron2d2);
     SlideNeuron6.drawInteractive();
@@ -559,10 +559,10 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     SlideNeuron7.neuronContainer.getChildAt(1).getChildAt(0).visible=true;
 
     var textNeuron2e = [
-        [["The value we get" +'\n'+"after applying the activation function"+'\n'+"is the neuron's final output - "+'\n'],[layout.CX-450,layout.CY-190]],
-       [["         also called its"], [" activation.  ", textstyles.large_bold],[layout.CX-450,layout.CY-105]],
-       [["Here, more active neurons are a brighter yellow.",textstyles.instruct], [layout.CX-465,layout.CY-50]],
-       [["Hover your mouse over the neuron" +'\n'+"to view its formula.",textstyles.instruct], [layout.CX-450,layout.CY]],
+        [["我们在应用激活函数" +'\n'+"之后得到的数值"+'\n'+"就是神经网络最终的输出 - "+'\n'],[layout.CX-450,layout.CY-190]],
+       [["         也被叫做它的"], [" activation.  ", textstyles.large_bold],[layout.CX-450,layout.CY-105]],
+       [["在这里，更活跃的神经元是明黄色.",textstyles.instruct], [layout.CX-465,layout.CY-50]],
+       [["把鼠标悬停在神经元上" +'\n'+"来查看它的formula.",textstyles.instruct], [layout.CX-450,layout.CY]],
 
     
        /*  [["We can show a neuron's activation "+'\n'
@@ -598,14 +598,14 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textNet1 = [
         targetarrow,
-        [["Because we have 2 classes,"+'\n'+ "we need two final neurons in our output layer. ", textstyles.large_bold], [layout.CX-470,layout.CY-170]],
+        [["因为我们要分成两类,"+'\n'+ "所以在我们的输出层中需要两个最终的神经元. ", textstyles.large_bold], [layout.CX-470,layout.CY-170]],
         //[["Each output neuron corresponds to a different class."], [layout.LEFTBUFFER+500,170]],
 
-        [["When our image is a"], [" blueberry", textstyles.default_blue], [", we want: "], [layout.CX,layout.CY-80]],
-        [["This neuron to equal"], [" 0",textstyles.large_bold], [layout.CX+40,layout.CY-10]],
-        [["This neuron to equal"], [" 1",textstyles.large_bold], [layout.CX+40,layout.CY+40]],
-        [[" These are our"], [" target ", textstyles.large_bold], ["values."], [layout.CX+20,layout.CY+100]],
-        [["Click the image to view another example.",textstyles.instruct], [layout.CX,layout.CY+150]],
+        [["当我们的图片是一个"], [" 蓝莓", textstyles.default_blue], [", 我们希望: "], [layout.CX,layout.CY-80]],
+        [["这个神经元的值为"], [" 0",textstyles.large_bold], [layout.CX+40,layout.CY-10]],
+        [["这个神经元的值为"], [" 1",textstyles.large_bold], [layout.CX+40,layout.CY+40]],
+        [[" 这是我们的"], [" 目标 ", textstyles.large_bold], ["值."], [layout.CX+20,layout.CY+100]],
+        [["点击图片更换例子.",textstyles.instruct], [layout.CX,layout.CY+150]],
 
     ];
     SlideNet1.drawText(textNet1);
@@ -624,7 +624,7 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     SlideNet2.draw_init(net2);    
 
     var textNet1b = [
-        [["We can add hidden layers..."], [layout.CX+25,layout.CY-150]],
+        [["我们可以添加隐藏层..."], [layout.CX+25,layout.CY-150]],
     ];
     SlideNet2.drawText(textNet1b);
     SlideNet2.drawTextButtons();
@@ -666,12 +666,12 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     SlideNet3.draw_init(net3);    
 
     var textNet1b2 = [
-        [["We can add hidden layers..."], [layout.CX+25,layout.CY-150]],
-        [["...and add neurons to each hidden layer."], [layout.CX+100,layout.CY-100]],
-        [["Notice how the"], [" output ",textstyles.large_bold], ["of one layer "], [layout.CX+120,layout.CY-50]],
-        [["becomes the"], [" input ",textstyles.large_bold], ["of the next. "], [layout.CX+130,layout.CY]],
-        [["This process of going from"+'\n'+ "input to final output is called "],[layout.CX+140,layout.CY+100]],
-        [["forward propagation.",textstyles.large_bold], [layout.CX+140,layout.CY+160]],
+        [["我们可以添加隐藏层..."], [layout.CX+25,layout.CY-150]],
+        [["...也可以向每个隐藏层中添加神经元."], [layout.CX+100,layout.CY-100]],
+        [["特别注意前一层的"], [" 输出 ",textstyles.large_bold], [layout.CX+120,layout.CY-50]],
+        [["是怎么转变为下一层的"], [" 输入 ",textstyles.large_bold], ["的. "], [layout.CX+130,layout.CY]],
+        [["这个从输入"+'\n'+ "到最终输出的过程被叫做 "],[layout.CX+140,layout.CY+100]],
+        [["前向传播.",textstyles.large_bold], [layout.CX+140,layout.CY+160]],
     ];
     SlideNet3.drawText(textNet1b2);
     SlideNet3.drawTextButtons();
@@ -682,8 +682,8 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     SlideNet4.slideNet=net3;
     SlideNet4.draw_init(net3);    
     var textNet1c = [
-        [["Use these buttons to add layers.", textstyles.instruct], [layout.CX-420,layout.CY-210]],
-        [["Use these buttons" +'\n'+"to add neurons.", textstyles.instruct], [layout.CX-410,layout.CY-150]],
+        [["用这些按钮来添加层.", textstyles.instruct], [layout.CX-420,layout.CY-210]],
+        [["用这些按钮" +'\n'+"来添加神经元.", textstyles.instruct], [layout.CX-410,layout.CY-150]],
 
 
     ];
@@ -702,9 +702,9 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     //back intro 1
     var textNet1d = [
-        [["Now that we've built our network, we can begin training it."], [layout.CX-250,layout.CY-120]],
-        [["This is the stage where the neural network learns how to separate the data."], [layout.CX-350,layout.CY-70]],
-        [["In order to learn, the network uses an algorithm called"], [" backpropagation.",textstyles.large_bold], [layout.CX-320,layout.CY-20]],
+        [["既然我们已经建立了我们的神经网络网络，我们可以开始着手训练它."], [layout.CX-250,layout.CY-120]],
+        [["这是神经网络学习如何将数据分类的过程."], [layout.CX-350,layout.CY-70]],
+        [["为了学习，我们的神经网络需要使用一种算法，叫做"], [" 反向传播.",textstyles.large_bold], [layout.CX-320,layout.CY-20]],
 
     ];
     SlideBackIntro1.drawText(textNet1d);
@@ -735,13 +735,13 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textNet1d2 = [
         percep_forward,percep_cost,percep_update,
-        [["Backpropagation has 3 steps:"], [layout.CX-450,layout.CY-180]],
-        [["1. Forward propagation                                           " +'\n', textstyles.large_bold],
-         [     "like we did before - give the net an input and calculate the output.  "], [layout.CX-420,layout.CY-120]],
-        [["2. Error calculation                                                  " +'\n', textstyles.large_bold],
-         [     "how far off were my actual output values from my target values?"], [layout.CX-420,layout.CY]],
-         [["3. Update                                                                    " +'\n', textstyles.large_bold],
-         [     "adjust the weights and biases to get closer to those target values. "], [layout.CX-420,layout.CY+120]],
+        [["反向传播有3个步骤:"], [layout.CX-450,layout.CY-180]],
+        [["1. 前向传播                                           " +'\n', textstyles.large_bold],
+         [     "就像我们之前做的那样 - 我们给网络一个输入，然后计算输出.  "], [layout.CX-420,layout.CY-120]],
+        [["2. 误差计算                                                  " +'\n', textstyles.large_bold],
+         [     "我的实际输出值与目标值相差多少？"], [layout.CX-420,layout.CY]],
+        [["3. 更新                                                                    " +'\n', textstyles.large_bold],
+         [     "调整权重和偏置来让结果更接近目标值. "], [layout.CX-420,layout.CY+120]],
 
     ];
     SlideBackIntro2.drawText(textNet1d2);
@@ -768,12 +768,12 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textError1 = [
         costform,
-        [["We want to know how far off the output of our net is from our target values."], [layout.CX-450,layout.CY-190]],
-        [["To do this, we use a"],[" cost function.",textstyles.large_bold], [layout.CX-350,layout.CY-140]],
+        [["我们想知道我们网络的输出与目标值相差有多远."], [layout.CX-450,layout.CY-190]],
+        [["为了做到这一点，我们需要使用"],[" 代价函数(cost function).",textstyles.large_bold], [layout.CX-350,layout.CY-140]],
 
-        [[" n = number of data points"+'\n'+" x = for each output neuron ",ital_sm], [layout.CX -300,layout.CY+40]],
-        [["The activation of the output neurons depends on the current weights and biases of the network."], [layout.CX-450,layout.CY+120]],
-        [["So, we can think of our cost function as a function of the weights and biases of the network. "], [layout.CX-450,layout.CY+170]],
+        [[" n = 数据点的个数"+'\n'+" x = 对每个输出神经元 ",ital_sm], [layout.CX -300,layout.CY+40]],
+        [["输出神经元的激活取决于网络的当前网络的权重和偏置."], [layout.CX-450,layout.CY+120]],
+        [["所以，我们可以把代价函数看成是整个神经网络的权重和偏差的函数. "], [layout.CX-450,layout.CY+170]],
     ];
     SlideCost1.drawText(textError1);
 
@@ -796,8 +796,8 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     
 
     var textNet1e = [
-        [ [" Here's how the cost is calculated for one example."],[layout.CX-470,layout.CY-180] ],
-        [ [" Reminder: click weights to change,"+'\n'+ " click image to see a new example",textstyles.instruct],[layout.CX-450,layout.CY+120] ],
+        [ [" 这里有一个神经网络是如何计算代价的例子."],[layout.CX-470,layout.CY-180] ],
+        [ [" 提示：点击权重可以更改它们，"+'\n'+ " 点击图片可以更换一个新的样例",textstyles.instruct],[layout.CX-450,layout.CY+120] ],
         [ [" Notice how                    "+'\n'],[" changing the"],[" weights ",textstyles.large_bold],[layout.NEURON_LEFTLIM+450,layout.CY-60] ],
         [ [" changes the"],[" output   ",textstyles.large_bold],[layout.NEURON_LEFTLIM+450,layout.CY] ],
         [ [" which changes the"],[" cost. ",textstyles.large_bold],[layout.NEURON_LEFTLIM+450,layout.CY+40] ],
@@ -823,11 +823,11 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textError3 = [
         costgraph,
-        [["Let's look at a single weight."], [layout.CX-450,layout.CY-200]],
-        [["Its relationship to the cost may look something like this."], [layout.CX-450,layout.CY-150]],
-        [["We want to find the value of w "+'\n'+"that will make the cost the smallest.",textstyles.large_bold], [layout.CX+40,layout.CY-80]],
-        [["While this may look like an easy task,"+'\n'+"the neural network will have multiple weights and biases," 
-            +'\n'+"and therefore more than one variable affecting the cost.", textstyles.medium], [layout.CX+40,layout.CY]],
+        [["让我们看一下单个权重."], [layout.CX-450,layout.CY-200]],
+        [["它与代价的关系看起来大概是这样的."], [layout.CX-450,layout.CY-150]],
+        [["我们希望找到一个 w 的值"+'\n'+"这个w值会让代价最小.",textstyles.large_bold], [layout.CX+40,layout.CY-80]],
+        [["虽然这个问题看起来很简单,"+'\n'+"但因为神经网络有多个权重和偏置," 
+            +'\n'+"因此影响代价的因素不止一个   ", textstyles.medium], [layout.CX+40,layout.CY]],
         [["(We just quickly run out of dimensions to visualize it in.)", textstyles.medium], [layout.CX+40,layout.CY+90]],
     ];
     SlideCost3.drawText(textError3);
@@ -849,10 +849,10 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textError4 = [
         costgraph_point,
-        [["The neural network adjusts its weights and biases to minimize the cost using an algorithm called"+'\n'],["          gradient descent.", textstyles.large_bold], [layout.CX-450,layout.CY-180]],
-        [["First, we find the current weight and cost."], [layout.CX+40,layout.CY-80]],
-        [["Next, we find the slope, or"], [" gradient "+'\n',textstyles.large_bold], ["of the graph at this point."], [layout.CX+40,layout.CY-20]],
-        [["This is written as            "], [layout.CX+70,layout.CY+70]],
+        [["为了调整神经网络的权重和偏置来使代价最小化，我们使用了一种算法："+'\n'],["          梯度下降法.", textstyles.large_bold], [layout.CX-450,layout.CY-180]],
+        [["首先，我们找到当前的权重和偏置."], [layout.CX+40,layout.CY-80]],
+        [["接下来，我们求出这个点的斜率, 或者叫做"], [" 梯度 "+'\n',textstyles.large_bold], [layout.CX+40,layout.CY-20]],
+        [["我们把它记作            "], [layout.CX+70,layout.CY+70]],
         nablaC,
 
 
@@ -902,15 +902,15 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     var textError5 = [
         costgraph_slope,
 
-        [["We want to move in the downhill direction, so              "], [layout.CX,layout.CY-190]],
+        [["我们想沿着下坡的方向移动，所以              "], [layout.CX,layout.CY-190]],
         minnablaC,
 
         [["We find the magnitude of change           "
             +'\n\n'+ "by multiplying"+'\n\n'+ "by a value called the learning rate"], [layout.CX+40,layout.CY-140]],
         minnablaC2,
-        [["This is a number we set beforehand -" +'\n'+"usually between 0 and 1.",textstyles.medium], [layout.CX+60,layout.CY+5]],
+        [["这是一个我们事先设定好的数字 -" +'\n'+"通常在 0 和 1 之间.",textstyles.medium], [layout.CX+60,layout.CY+5]],
         lr,
-        [["The final formula for updating our weight is:"], [layout.CX+40,layout.CY+80]],
+        [["我们最终用来更新权重的公式是:"], [layout.CX+40,layout.CY+80]],
         wnewform
 
     ];
@@ -924,8 +924,8 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
         costgraph_slope2.y=costgraphy;
     var textError6 = [
         costgraph_slope2,
-        [["We keep repeating these steps until our slope is 0."], [layout.CX+20,layout.CY-60]],
-        [["Each time we calculate the cost and update our net"+'\n'+" is called an"],[" epoch.", textstyles.large_bold], [layout.CX+20,layout.CY]],
+        [["一直重复这些步骤，直到斜率变为0."], [layout.CX+20,layout.CY-60]],
+        [["每次我们计算代价并更新我们的网络"+'\n'+" 被叫做一次"],[" ？？(epoch).", textstyles.large_bold], [layout.CX+20,layout.CY]],
     ];
     SlideCost6.drawText(textError6);
 
@@ -947,9 +947,9 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textError6a = [
         costgraph_lrsmall,costgraph_lrlarge,
-        [["The size of the learning rate is imporant."], [layout.CX-450,layout.CY-180]],
-        [["Too small, and it will take "+'\n'+ "a long time to reach the minimum."], [layout.CX-350,layout.CY+150]],
-        [["Too large, and we may end up"+'\n'+ " jumping past the minimum."], [layout.CX+50,layout.CY+150]]
+        [["学习率的大小是很重要的."], [layout.CX-450,layout.CY-180]],
+        [["学习率太小，则需要 "+'\n'+ "很长时间才能到达最小值."], [layout.CX-350,layout.CY+150]],
+        [["学习率太大，我们可能"+'\n'+ " 会跳过最小值."], [layout.CX+50,layout.CY+150]]
     ];
     SlideCost7.drawText(textError6a);
 
@@ -995,10 +995,10 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
     }
 
     var textError7 = [        
-        [["We can visualize the neural network's learning using our graph.",textstyles.large_bold], [layout.CX-450,layout.CY-180]],
-        [[" A blue square means the net will classify" +'\n'+" any data points in that region as blueberries."], [layout.CX,layout.CY-100]],
-        [[" A red square means the same for strawberries."], [layout.CX,layout.CY-20]],
-        [[" Darker colors mean the net is"+'\n'+" more confident in its classification."], [layout.CX,layout.CY+60]],
+        [["我们可以用图像来可视化神经网络的学习过程.",textstyles.large_bold], [layout.CX-450,layout.CY-180]],
+        [[" 蓝色区域代表网络" +'\n'+" 将该区域内的所有数据点归类为蓝莓."], [layout.CX,layout.CY-100]],
+        [[" 红色区域则代表归类为草莓."], [layout.CX,layout.CY-20]],
+        [[" 颜色越深代表着"+'\n'+" 网络对其分类的结果更有自信."], [layout.CX,layout.CY+60]],
     ];
     SlideCost8.drawText(textError7);
 
@@ -1012,9 +1012,9 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
         gotocalcarrow.y=layout.CY-30;
 
     var textError8 = [
-    [["Want to see the calculus behind gradient descent?", textstyles.large_bold], [layout.CX-300,layout.CY-150]],
-    [["Click here", ], [layout.CX-50,layout.CY-90]],
-    [["Otherwise, click next.", ], [layout.CX-100,layout.CY+150]],
+    [["想看看梯度下降背后的微积分吗？", textstyles.large_bold], [layout.CX-300,layout.CY-150]],
+    [["点这里", ], [layout.CX-50,layout.CY-90]],
+    [["或者，点下一页跳过计算过程.", ], [layout.CX-100,layout.CY+150]],
 
     gotocalcarrow,
 
@@ -1059,14 +1059,14 @@ SlideInstruct2.arrowContainer.addChild(arrow2);
 
     var textError6b = [
     fakelearnbox,
-    [["And that's it!",textstyles.large_bold],[" A neural network's 'learning' is just the process"], [layout.CX-300,layout.CY-200]],
-    [["of updating its weights and biases to minimize the cost.               "], [layout.CX-300,layout.CY-160]],
+    [["就是这样!",textstyles.large_bold],[" 神经网络的“学习”就是更新其权重和偏差"], [layout.CX-300,layout.CY-200]],
+    [["以最小化代价的过程               "], [layout.CX-300,layout.CY-160]],
 
-    [["You've finished the tutorial!", textstyles.large_bold], [layout.CX-170,layout.CY-90]],
-    [["On the next slide is sandbox mode - where we'll get to put all this to the test."], [layout.CX-350,layout.CY-40]],
-    [["Click this button" +'\n'+ "to reset the net.",textstyles.medium], [layout.CX-350,layout.CY+90]],
-    [["Click this button to"+'\n'+ "continuously backpropagate.",textstyles.medium], [layout.CX+150,layout.CY+70]],
-    [["Click this button to"+'\n'+ " backpropagate 1 epoch.",textstyles.medium], [layout.CX+190,layout.CY+150]],
+    [["你已经完成了教程!", textstyles.large_bold], [layout.CX-170,layout.CY-90]],
+    [["下一页是沙盒模式 ———— 可以随意调整之前的神经网络。"], [layout.CX-350,layout.CY-40]],
+    [["点击这个按钮" +'\n'+ "来重置网络.",textstyles.medium], [layout.CX-350,layout.CY+90]],
+    [["点击这个按钮"+'\n'+ "来连续执行反向传播.",textstyles.medium], [layout.CX+150,layout.CY+70]],
+    [["点击这个按钮"+'\n'+ " 来进行一次反向传播.",textstyles.medium], [layout.CX+190,layout.CY+150]],
     learnboxarrow,
     // [["On the next slide is sandbox mode. Click this button to backpropogate for one epoch."+'/n'+" Click this button to continueously backpropogate. Click this button to reset the weights and biases."], [layout.CX-460,layout.CY+40]],
 
